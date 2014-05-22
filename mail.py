@@ -3,8 +3,8 @@ from datetime import date, datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-ME = 'rafaoliveira@mestrainfo.com.br'
-YOU = 'leandrogomes@mestrainfo.com.br'
+ME = 'meu_email'
+YOU = 'email_destino'
 
 def enviaEmail():
 	
@@ -13,7 +13,7 @@ def enviaEmail():
     msg['From'] = ME
     msg['To'] = YOU
     msg.attach(retornaHTMLMensagem())
-    s = smtplib.SMTP('192.100.100.55','25')
+    s = smtplib.SMTP('link','porta')
     s.sendmail(ME, YOU, msg.as_string())
     s.quit()
 
